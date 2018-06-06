@@ -1,0 +1,43 @@
+{
+  "name": "polymer-typescript-starter",
+  "version": "4.0.0",
+  "description": "Polymer Starter project using Typescript and IoC powered by InversifyJS",
+  "author": "Tim Okolowski",
+  "license": "MIT",
+  "repository": "git@github.com:oktinaut/polymer-typescript-starter.git",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.0-pre.15",
+    "@polymer/app-route": "^3.0.0-pre.15",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.15",
+    "@polymer/iron-icons": "^3.0.0-pre.19",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.15",
+    "@polymer/iron-media-query": "^3.0.0-pre.15",
+    "@polymer/iron-meta": "^3.0.0-pre.19",
+    "@polymer/iron-pages": "^3.0.0-pre.15",
+    "@polymer/iron-selector": "^3.0.0-pre.15",
+    "@polymer/paper-icon-button": "^3.0.0-pre.15",
+    "@polymer/polymer": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "inversify": "^4.13.0",
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@types/polymer": "^1.2.4",
+    "copy-webpack-plugin": "^4.5.1",
+    "dom-loader": "^1.0.4",
+    "html-loader": "^0.5.5",
+    "ts-loader": "^4.3.1",
+    "typescript": "^2.9.1",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.11.0",
+    "webpack-cli": "^3.0.2",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=8.0"
+  }
+}
