@@ -1,11 +1,11 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element';
+import { PolymerElement } from '@polymer/polymer';
+import { customElement } from '@polymer/decorators';
 
 import * as template from "./Error404View.html";
 
-class ErrorView404 extends PolymerElement {
+@customElement("error-404-view")
+class Error404View extends PolymerElement {
   static get template() {
     return template;
   }
 }
-
-window.customElements.define('error-view-404', ErrorView404);

@@ -1,4 +1,5 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element';
+import { PolymerElement } from '@polymer/polymer';
+import { customElement, property } from "@polymer/decorators";
 
 import '@polymer/paper-icon-button/paper-icon-button'
 
@@ -10,11 +11,13 @@ import { IGroup } from '../Contracts/IGroup';
 
 import * as template from "./GroupsView.html";
 
+@customElement("groups-view")
 class GroupsView extends PolymerElement {
 
     @Application.inject(Types.IGroupsService)
     private groupsService: IGroupsService;
 
+    @property()
     private groups: IGroup[] = [];
 
     static get template() {
@@ -32,5 +35,3 @@ class GroupsView extends PolymerElement {
         this.groups = groups;
     }
 }
-
-window.customElements.define('groups-view', GroupsView);

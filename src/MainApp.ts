@@ -1,6 +1,9 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element';
+import { PolymerElement } from '@polymer/polymer';
+import { customElement, property, observe } from "@polymer/decorators";
 
 import '@polymer/app-layout/app-drawer/app-drawer';
+import { AppDrawerElement } from '@polymer/app-layout/app-drawer/app-drawer';
+
 import '@polymer/app-layout/app-drawer-layout/app-drawer-layout';
 import '@polymer/app-layout/app-header/app-header';
 import '@polymer/app-layout/app-header-layout/app-header-layout';
@@ -18,32 +21,24 @@ import './MyIcons';
 
 import * as template from './MainApp.html';
 
+@customElement("main-app")
 class MainApp extends PolymerElement {
 
-  public page: String;
+  @property({ type: String, reflectToAttribute: true })
+  page: string;
+
+  @property()
+  routeData: any;
+
+  @property()
+  subroute: any;
 
   static get template() {
     return template;
   }
 
-  static get properties() {
-    return {
-      page: {
-        type: String,
-        reflectToAttribute: true,
-      },
-      routeData: Object,
-      subroute: Object,
-    };
-  }
-
-  static get observers() {
-    return [
-      '_routePageChanged(routeData.page)'
-    ];
-  }
-
-  _routePageChanged(page) {
+  @observe("routeData.page")
+  private routePageChanged(page) {
     // Show the corresponding page according to the route.
     //
     // If no page was found in the route data, page will be an empty string.
@@ -56,11 +51,11 @@ class MainApp extends PolymerElement {
       this.page = 'error-404';
     }
 
+    const drawer = this.$.drawer as AppDrawerElement;
+
     // Close a non-persistent drawer when the page & route are changed.
-    if (!this.$.drawer.persistent) {
-      this.$.drawer.close();
+    if (!drawer.persistent) {
+      drawer.close();
     }
   }
 }
-
-window.customElements.define('main-app', MainApp);

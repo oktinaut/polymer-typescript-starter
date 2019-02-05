@@ -1,4 +1,5 @@
-import { PolymerElement } from '@polymer/polymer/polymer-element';
+import { PolymerElement } from '@polymer/polymer';
+import { customElement, property } from "@polymer/decorators";
 
 import '@polymer/paper-icon-button/paper-icon-button'
 
@@ -10,11 +11,13 @@ import { IUser } from '../Contracts/IUser';
 
 import * as template from "./UsersView.html";
 
+@customElement("users-view")
 class UsersView extends PolymerElement {
 
     @Application.inject(Types.IUsersService)
     private usersService: IUsersService;
 
+    @property()
     private users: IUser[] = [];
 
     static get template() {
@@ -32,5 +35,3 @@ class UsersView extends PolymerElement {
         this.users = users;
     }
 }
-
-window.customElements.define('users-view', UsersView);
