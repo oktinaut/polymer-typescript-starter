@@ -1,7 +1,6 @@
+import { PolymerElement } from '@polymer/polymer/polymer-element';
 
-import { PolymerElement, html } from '@polymer/polymer/polymer-element';
-
-import * as template from "./error-view-404.html";
+import * as template from "./Error404View.html";
 
 class ErrorView404 extends PolymerElement {
   static get template() {

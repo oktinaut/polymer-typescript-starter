@@ -1,8 +1,4 @@
-
-import 'reflect-metadata';
-
-import { PolymerElement, html } from '@polymer/polymer/polymer-element';
-import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils/settings';
+import { PolymerElement } from '@polymer/polymer/polymer-element';
 
 import '@polymer/app-layout/app-drawer/app-drawer';
 import '@polymer/app-layout/app-drawer-layout/app-drawer-layout';
@@ -16,13 +12,11 @@ import '@polymer/iron-pages/iron-pages';
 import '@polymer/iron-selector/iron-selector';
 import '@polymer/paper-icon-button/paper-icon-button';
 
-import './features/users/view/users-view';
-import './features/groups/view/groups-view';
-import './error-view-404';
+import './Error404View';
 
-import './my-icons';
+import './MyIcons';
 
-import * as template from './main-app.html';
+import * as template from './MainApp.html';
 
 class MainApp extends PolymerElement {
 
@@ -68,13 +62,5 @@ class MainApp extends PolymerElement {
     }
   }
 }
-
-// Gesture events like tap and track generated from touch will not be
-// preventable, allowing for better scrolling performance.
-setPassiveTouchGestures(true);
-
-// Set Polymer's root path to the same value we passed to our service worker
-// in `index.html`.
-setRootPath(MyAppGlobals.rootPath);
 
 window.customElements.define('main-app', MainApp);

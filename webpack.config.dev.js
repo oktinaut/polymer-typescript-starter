@@ -3,7 +3,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     devtool: "inline-source-map",
-    entry: "./src/main-app.ts",
+    entry: "./src/index.ts",
     mode: "development",
     output: {
         path: path.resolve(__dirname, "./build"),
@@ -24,8 +24,6 @@ module.exports = {
             { from: "node_modules/@webcomponents", to: "node_modules/@webcomponents" },
         ]),
     ],
-    externals: {
-    },
     devServer: {
         contentBase: path.resolve(__dirname, "./build"),
         compress: true,

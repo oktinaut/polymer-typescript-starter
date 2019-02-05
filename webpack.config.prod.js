@@ -4,7 +4,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
     devtool: "inline-source-map",
-    entry: "./src/app.ts",
+    entry: "./src/index.ts",
     mode: "production",
     output: {
         path: path.resolve(__dirname, "./build"),
@@ -32,12 +32,4 @@ module.exports = {
             },
         }),
     ],
-    externals: {
-    },
-    devServer: {
-        contentBase: path.resolve(__dirname, "./build"),
-        compress: true,
-        port: 9000,
-        historyApiFallback: true,
-    },
 }

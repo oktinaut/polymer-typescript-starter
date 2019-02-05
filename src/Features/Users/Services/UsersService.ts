@@ -1,9 +1,9 @@
 import { injectable, inject } from "inversify";
 
-import { Types } from "../contract/types";
-import { IUsersService } from "../contract/users-service.contract";
-import { IUsersRepository } from "../contract/users-repository.contract";
-import { User } from "../contract/user.contract";
+import { Types } from "../Contracts/Types";
+import { IUsersService } from "../Contracts/IUsersService";
+import { IUsersRepository } from "../Contracts/IUsersRepository";
+import { IUser } from "../Contracts/IUser";
 
 @injectable()
 export class UsersService implements IUsersService {
@@ -16,11 +16,11 @@ export class UsersService implements IUsersService {
         this.usersRepository = usersRepository;
     }
         
-    getAllUsers(): Promise<User[]> {
+    getAllUsers(): Promise<IUser[]> {
         return this.usersRepository.getAllUsers();
     }
 
-    getUserById(id: string): Promise<User> {
+    getUserById(id: string): Promise<IUser> {
         return this.usersRepository.getUserById(id);
     }
 }
