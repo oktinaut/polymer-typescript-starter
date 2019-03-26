@@ -16,6 +16,10 @@ module.exports = {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" },
             { test: /\.html?$/, loader: "dom-loader?tag=template!html-loader" },
+            {
+                test: /\.css|\.s(c|a)ss$/,
+                use: ['polymer-css-loader', 'extract-loader', 'css-loader', 'sass-loader'],
+            },
         ]
     },
     plugins: [

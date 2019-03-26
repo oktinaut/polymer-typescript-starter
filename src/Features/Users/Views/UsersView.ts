@@ -3,13 +3,13 @@ import { customElement, property } from "@polymer/decorators";
 
 import '@polymer/paper-icon-button/paper-icon-button'
 
-import '../../../SharedStyles';
 
 import { Types } from '../Contracts/Types';
 import { IUsersService } from '../Contracts/IUsersService';
 import { IUser } from '../Contracts/IUser';
 
 import * as template from "./UsersView.html";
+import "./UsersView.scss";
 
 @customElement("users-view")
 class UsersView extends PolymerElement {

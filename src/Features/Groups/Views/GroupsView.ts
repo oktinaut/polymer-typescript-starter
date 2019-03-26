@@ -3,13 +3,12 @@ import { customElement, property } from "@polymer/decorators";
 
 import '@polymer/paper-icon-button/paper-icon-button'
 
-import '../../../SharedStyles';
-
 import { Types } from '../Contracts/Types';
 import { IGroupsService } from '../Contracts/IGroupsService';
 import { IGroup } from '../Contracts/IGroup';
 
 import * as template from "./GroupsView.html";
+import "./GroupsView.scss";
 
 @customElement("groups-view")
 class GroupsView extends PolymerElement {

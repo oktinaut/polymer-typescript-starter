@@ -15,11 +15,8 @@ import '@polymer/iron-pages/iron-pages';
 import '@polymer/iron-selector/iron-selector';
 import '@polymer/paper-icon-button/paper-icon-button';
 
-import './Error404View';
-
-import './MyIcons';
-
 import * as template from './MainApp.html';
+import "./MainApp.scss";
 
 @customElement("main-app")
 class MainApp extends PolymerElement {
